@@ -11,14 +11,11 @@
             background-color: white;
             margin: 0;
             padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
         }
 
         header {
             background-color: white;
-            padding: 15px;
+            padding: 10px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -26,20 +23,18 @@
             border-bottom: 1px solid gray;
             position: fixed;
             top: 0;
-            left: 0;
-            right: 0;
             z-index: 10;
         }
 
         header h1 {
             margin: 0;
-            font-size: 24px;
+            font-size: 1.5rem;
             color: black;
         }
 
         .issues-container {
             display: flex;
-            justify-content: center;
+            flex-wrap: wrap;
             gap: 10px;
         }
 
@@ -47,10 +42,11 @@
             padding: 10px 15px;
             background-color: transparent;
             border-radius: 5px;
-            font-size: 14px;
+            font-size: 1rem;
             font-weight: bold;
             text-decoration: none;
             color: black;
+            cursor: pointer;
             transition: all 0.3s ease;
         }
 
@@ -59,15 +55,17 @@
             transform: translateY(-2px);
         }
 
-        .content {
-            display: none;
+        main {
+            margin-top: 70px;
             padding: 20px;
             width: 100%;
-            text-align: center;
-            margin-top: 70px;
         }
 
-        .active {
+        .content {
+            display: none;
+        }
+
+        .content.active {
             display: block;
         }
 
@@ -75,6 +73,7 @@
             display: flex;
             flex-direction: column;
             align-items: flex-start;
+            gap: 10px;
         }
 
         .issue-item {
@@ -82,8 +81,7 @@
             margin-bottom: 15px;
             background-color: #f1f1f1;
             border-radius: 5px;
-            width: 90%;
-            text-align: left;
+            width: 100%;
         }
 
         /* Responsive styles */
@@ -94,43 +92,27 @@
             }
 
             header h1 {
-                font-size: 20px;
-                margin-bottom: 10px;
+                font-size: 1.2rem;
             }
 
             .issues-container {
-                flex-wrap: wrap;
-                gap: 5px;
                 justify-content: flex-start;
             }
 
             .issue {
                 padding: 8px 12px;
-                font-size: 12px;
-            }
-
-            .content {
-                padding: 10px;
-                margin-top: 90px;
-            }
-
-            .issue-item {
-                width: 100%;
+                font-size: 0.9rem;
             }
         }
 
         @media (max-width: 480px) {
             header h1 {
-                font-size: 18px;
+                font-size: 1rem;
             }
 
             .issue {
                 padding: 6px 10px;
-                font-size: 10px;
-            }
-
-            .content {
-                margin-top: 100px;
+                font-size: 0.8rem;
             }
         }
     </style>
@@ -139,59 +121,51 @@
     <header>
         <h1>Eşlik-siz Dergi</h1>
         <div class="issues-container">
-            <div class="issue" onclick="showContent('hakkimizda')">
-                <a href="#">Hakkımızda</a>
-            </div>
-            <div class="issue" onclick="showContent('sayilar')">
-                <a href="#">Sayılar</a>
-            </div>
-            <div class="issue" onclick="showContent('kunye')">
-                <a href="#">Künye</a>
-            </div>
+            <div class="issue" onclick="showContent('hakkimizda')">Hakkımızda</div>
+            <div class="issue" onclick="showContent('sayilar')">Sayılar</div>
+            <div class="issue" onclick="showContent('kunye')">Künye</div>
         </div>
     </header>
 
-    <div id="hakkimizda" class="content">
-        <h2>Hakkımızda</h2>
-        <p>1</p>
-    </div>
+    <main>
+        <div id="hakkimizda" class="content">
+            <h2>Hakkımızda</h2>
+            <p>Bu, Hakkımızda sayfasının içeriğidir.</p>
+        </div>
 
-    <div id="sayilar" class="content">
-        <h2>Sayılar</h2>
-        <div class="issue-list">
-            <div class="issue-item">
-                <h3>Sayı 1</h3>
-                <p>Bu, ilk sayının içeriğidir.</p>
-            </div>
-            <div class="issue-item">
-                <h3>Sayı 2</h3>
-                <p>İkinci sayının içeriği burada olacak.</p>
-            </div>
-            <div class="issue-item">
-                <h3>Sayı 3</h3>
-                <p>Üçüncü sayının içerikleri.</p>
+        <div id="sayilar" class="content">
+            <h2>Sayılar</h2>
+            <div class="issue-list">
+                <div class="issue-item">
+                    <h3>Sayı 1</h3>
+                    <p>İlk sayının içeriği burada yer alıyor.</p>
+                </div>
+                <div class="issue-item">
+                    <h3>Sayı 2</h3>
+                    <p>İkinci sayının içeriği burada yer alıyor.</p>
+                </div>
+                <div class="issue-item">
+                    <h3>Sayı 3</h3>
+                    <p>Üçüncü sayının içeriği burada yer alıyor.</p>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div id="kunye" class="content">
-        <h2>Künye</h2>
-        <p>3</p>
-    </div>
+        <div id="kunye" class="content">
+            <h2>Künye</h2>
+            <p>Bu, Künye sayfasının içeriğidir.</p>
+        </div>
+    </main>
 
     <script>
         function showContent(contentId) {
             const contents = document.querySelectorAll('.content');
-            contents.forEach(content => {
-                content.classList.remove('active');
-            });
-
+            contents.forEach(content => content.classList.remove('active'));
             const activeContent = document.getElementById(contentId);
-            if (!activeContent.classList.contains('active')) {
-                activeContent.classList.add('active');
-            }
+            activeContent.classList.add('active');
         }
     </script>
 </body>
 </html>
+
 
