@@ -1,28 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-N6DPJT29');</script>
-<!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eşlik-siz Dergi</title>
     <style>
         body {
-            font-family: 'Arial', 'Helvetica', 'Verdana', sans-serif; /* Fallback to Helvetica, Verdana, or any available sans-serif */
+            font-family: 'Arial', 'Helvetica', 'Verdana', sans-serif;
             background-color: white;
             margin: 0;
             padding: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
-            min-height: 100vh; /* Allow the body to extend beyond the viewport */
-            overflow-y: auto; /* Enable vertical scrolling */
-            font-size: 16px; /* default font size */
+            min-height: 100vh;
+            overflow-y: auto;
+            font-size: 16px;
         }
 
         header {
@@ -106,16 +99,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             padding: 15px;
             margin-bottom: 10px;
             width: 100%;
-            background-color: black; /* Black background for edgy look */
+            background-color: black;
             color: white;
-            border-radius: 20px; /* Edgy corners */
+            border-radius: 20px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             cursor: pointer;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .issue-item:hover {
-            transform: translateY(-5px); /* Slightly lift when hovered */
+            transform: translateY(-5px);
             box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
         }
 
@@ -129,28 +122,36 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .issue-content {
             display: none;
             padding-top: 10px;
-            background-color: #333; /* Darker background for content */
+            background-color: #333;
             border-radius: 5px;
             padding: 15px;
             margin-top: 10px;
         }
 
+        .issue-content iframe {
+            width: 100%;
+            height: auto;
+            max-width: 100%;
+            aspect-ratio: 1.1;
+            border: none;
+        }
+
         /* Responsive Design: Adjust font-size for mobile screens */
         @media (max-width: 768px) {
             body {
-                font-size: 14px !important; /* Adjust font size for mobile */
+                font-size: 14px !important;
             }
 
             header h1 {
-                font-size: 24px !important; /* Adjust header font size for mobile */
+                font-size: 24px !important;
             }
 
             .issue {
-                font-size: 14px !important; /* Adjust issue font size for mobile */
+                font-size: 14px !important;
             }
 
             .issue-item {
-                width: 90%; /* Adjust issue item width for mobile */
+                width: 90%;
             }
         }
     </style>
@@ -191,7 +192,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <div id="sayilar3" class="issue-content">
                     <p>Üçüncü sayının içerikleri. Üçüncü sayının da içerikleri hakkında bilgi ekleyebilirsiniz.</p>
                     <!-- Embedded content for Sayı 3 -->
-                    <iframe width="620px" height="566px" src="https://www.yumpu.com/tr/embed/view/4t2TH7zKkvG3BUQR" frameborder="0" allowfullscreen="true" allowtransparency="true"></iframe><br>
+                    <iframe width="100%" height="auto" src="https://www.yumpu.com/tr/embed/view/4t2TH7zKkvG3BUQR" frameborder="0" allowfullscreen="true" allowtransparency="true"></iframe><br>
                     <a href="https://www.yumpu.com/tr/document/view/68591968/eslik-siz-dergi-3-say" title="Eşlik-siz Dergi 3. Sayı" target="_blank">Eşlik-siz Dergi 3. Sayı</a>
                 </div>
             </div>
@@ -211,8 +212,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
         function toggleContent(contentId) {
             const content = document.getElementById(contentId);
-            const isVisible = content.style.display === 'block';
-            content.style.display = isVisible ? 'none' : 'block';
+            content.style.display = content.style.display === 'block' ? 'none' : 'block';
         }
     </script>
 </body>
