@@ -56,7 +56,7 @@
         .issue-list {
             display: flex;
             flex-direction: column;
-            align-items: center; /* Centers the issues */
+            align-items: center;
             width: 100%;
             gap: 10px;
         }
@@ -64,7 +64,7 @@
         .issue-item {
             padding: 12px 20px;
             margin-bottom: 10px;
-            width: 50%; /* Makes the issues center and have a consistent width */
+            width: 50%;
             background-color: white;
             color: black;
             border-radius: 20px;
@@ -89,7 +89,7 @@
         .issue-content {
             display: none;
             padding-top: 10px;
-            background-color: white; /* Changed to white */
+            background-color: white;
             border-radius: 5px;
             padding: 15px;
             margin-top: 10px;
@@ -121,7 +121,7 @@
 </head>
 <body>
     <header>
-        <h1 onclick="showContent()">EŞLİK-SİZ</h1>
+        <h1 onclick="showContent()">Eşlik-siz</h1>
     </header>
 
     <div class="content">
@@ -130,19 +130,23 @@
                 <h3>Sayı 1</h3>
                 <div id="sayilar1" class="issue-content">
                     <p>Bu, ilk sayının içeriğidir. Burada derginin ilk sayısının özetine veya içeriklerine yer verebilirsiniz.</p>
+                    <iframe width="620px" height="600px" src="https://www.yumpu.com/tr/embed/view/uqP8I7wWlXhMZsov" frameborder="0" allowfullscreen="true"  allowtransparency="true"></iframe><br>
+                    <a href="https://www.yumpu.com/tr/document/view/68283979/lokrian-dergi-1-say-agustos-eylul-2022" title="Lokrian Dergi 1. Sayı (Ağustos-Eylül 2022)" target="_blank">Lokrian Dergi 1. Sayı (Ağustos-Eylül 2022)</a>
                 </div>
             </div>
             <div class="issue-item" onclick="toggleContent('sayilar2')">
                 <h3>Sayı 2</h3>
                 <div id="sayilar2" class="issue-content">
                     <p>İkinci sayının içeriği burada olacak. İkinci sayıda yer alan yazılar veya konular hakkında bilgi ekleyebilirsiniz.</p>
+                    <iframe width="620px" height="600px" src="https://www.yumpu.com/tr/embed/view/CsxpDdwrZHh27FVO" frameborder="0" allowfullscreen="true"  allowtransparency="true"></iframe><br>
+                    <a href="https://www.yumpu.com/tr/document/view/68284004/lokrian-dergi-ekim-kasm-says" title="Lokrian Dergi, Ekim-Kasım Sayısı" target="_blank">Lokrian Dergi, Ekim-Kasım Sayısı</a>
                 </div>
             </div>
             <div class="issue-item" onclick="toggleContent('sayilar3')">
                 <h3>Sayı 3</h3>
                 <div id="sayilar3" class="issue-content">
                     <p>Üçüncü sayının içerikleri. Üçüncü sayının da içerikleri hakkında bilgi ekleyebilirsiniz.</p>
-                    <iframe width="100%" height="auto" src="https://www.yumpu.com/tr/embed/view/4t2TH7zKkvG3BUQR" frameborder="0" allowfullscreen="true" allowtransparency="true"></iframe><br>
+                    <iframe width="620px" height="600px" src="https://www.yumpu.com/tr/embed/view/7xJ1XuYWpKHkzAMP" frameborder="0" allowfullscreen="true"  allowtransparency="true"></iframe><br>
                     <a href="https://www.yumpu.com/tr/document/view/68591968/eslik-siz-dergi-3-say" title="Eşlik-siz Dergi 3. Sayı" target="_blank">Eşlik-siz Dergi 3. Sayı</a>
                 </div>
             </div>
@@ -161,4 +165,3 @@
     </script>
 </body>
 </html>
-
