@@ -38,24 +38,26 @@
             font-size: 28px;
             color: white;
             white-space: nowrap;
-            font-family: 'Arial', sans-serif; /* Use a sans-serif font */
-            font-weight: bold; /* Make it bold */
-            text-transform: uppercase; /* Make it all uppercase */
+            font-family: 'Arial', sans-serif;
+            font-weight: bold;
+            text-transform: uppercase;
             cursor: pointer;
             text-align: center;
             flex-grow: 1;
         }
 
+        /* Content section */
         .content {
-            display: none;
-            padding: 20px;
             width: 100%;
             text-align: center;
             margin-top: 100px;
+            padding: 20px;
         }
 
-        .active {
-            display: block;
+        /* Hakkımızda section */
+        .hakkimizda {
+            font-size: 18px;
+            margin-bottom: 40px;
         }
 
         .issue-list {
@@ -111,15 +113,11 @@
         /* Responsive Design: Adjust font-size for mobile screens */
         @media (max-width: 768px) {
             body {
-                font-size: 14px !important;
+                font-size: 14px;
             }
 
             header h1 {
-                font-size: 24px !important;
-            }
-
-            .issue {
-                font-size: 14px !important;
+                font-size: 24px;
             }
 
             .issue-item {
@@ -130,17 +128,17 @@
 </head>
 <body>
     <header>
-        <h1 onclick="toggleContent()">EŞLİK-SİZ</h1>
+        <h1>EŞLİK-SİZ</h1>
     </header>
 
-    <!-- Hakkımızda content, displayed by default -->
-    <div id="hakkimizda" class="content active">
-        <h2 style="font-family: 'Arial', sans-serif;">Hakkımızda</h2>
+    <!-- Hakkımızda content section -->
+    <div class="content hakkimizda">
+        <h2>Hakkımızda</h2>
         <p>1</p> <!-- Hakkımızda sayfası için test yazısı -->
     </div>
 
-    <!-- Issue List section -->
-    <div id="sayilar" class="content">
+    <!-- Issues section -->
+    <div class="content">
         <div class="issue-list">
             <div class="issue-item" onclick="toggleContent('sayilar1')">
                 <h3>Sayı 1</h3>
@@ -167,22 +165,8 @@
     </div>
 
     <script>
-        function toggleContent() {
-            const hakkimizda = document.getElementById('hakkimizda');
-            const sayilar = document.getElementById('sayilar');
-            
-            // Toggle between Hakkımızda and Sayılar content
-            if (hakkimizda.classList.contains('active')) {
-                hakkimizda.classList.remove('active');
-                sayilar.classList.add('active');
-            } else {
-                hakkimizda.classList.add('active');
-                sayilar.classList.remove('active');
-            }
-        }
-
-        function toggleContent(issueId) {
-            const content = document.getElementById(issueId);
+        function toggleContent(contentId) {
+            const content = document.getElementById(contentId);
             content.style.display = content.style.display === 'block' ? 'none' : 'block';
         }
     </script>
