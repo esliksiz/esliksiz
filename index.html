@@ -19,7 +19,7 @@
         }
 
         header {
-            background-color: white;
+            background-color: black; /* Changed the header to black */
             padding: 20px;
             display: flex;
             justify-content: flex-start;
@@ -36,7 +36,7 @@
         header h1 {
             margin: 0;
             font-size: 28px;
-            color: black;
+            color: white; /* Changed text color to white */
             white-space: nowrap;
             margin-left: 30px;
             cursor: pointer;
@@ -55,7 +55,7 @@
             background-color: transparent;
             border-radius: 5px;
             transition: all 0.3s ease;
-            color: black;
+            color: white; /* White text for issues */
             font-size: 16px;
             font-weight: bold;
             text-decoration: none;
@@ -68,11 +68,11 @@
 
         .issue a {
             text-decoration: none;
-            color: black;
+            color: white;
         }
 
         .issue:hover a {
-            color: #333;
+            color: #ddd; /* Lighter color on hover */
         }
 
         .content {
@@ -99,8 +99,8 @@
             padding: 12px 20px; /* Reduced padding */
             margin-bottom: 10px;
             width: 80%;  /* Reduced width */
-            background-color: black;
-            color: white;
+            background-color: white; /* White background for issue boxes */
+            color: black; /* Black text color */
             border-radius: 20px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             cursor: pointer;
@@ -159,7 +159,7 @@
 </head>
 <body>
     <header>
-        <h1 onclick="showContent('hakkimizda')">Eşlik-siz Dergi</h1>
+        <h1 onclick="showContent('hakkimizda')">Eşlik-siz</h1> <!-- Changed text to "Eşlik-siz" -->
         <div class="issues-container">
             <div class="issue" onclick="showContent('sayilar')">
                 <a href="#">Sayılar</a>
@@ -167,14 +167,13 @@
         </div>
     </header>
 
-    <!-- Hakkımızda content, shown by default when "Eşlik-siz Dergi" is clicked -->
+    <!-- Hakkımızda content, shown by default when "Eşlik-siz" is clicked -->
     <div id="hakkimizda" class="content active">
         <h2>Hakkımızda</h2>
         <p>1</p> <!-- Hakkımızda sayfası için test yazısı -->
     </div>
 
     <div id="sayilar" class="content">
-        <h2>Sayılar</h2>
         <div class="issue-list">
             <div class="issue-item" onclick="toggleContent('sayilar1')">
                 <h3>Sayı 1</h3>
