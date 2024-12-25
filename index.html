@@ -4,11 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eşlik-siz Dergi</title>
-    <!-- Import Garamond from Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Garamond&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Arial', 'Helvetica', 'Verdana', sans-serif;
+            font-family: 'Arial', sans-serif; /* Body text in Arial */
             background-color: white;
             margin: 0;
             padding: 0;
@@ -24,7 +22,7 @@
             background-color: black;
             padding: 20px;
             display: flex;
-            justify-content: space-between; /* Align items to the ends */
+            justify-content: space-between;
             align-items: center;
             width: 100%;
             border-bottom: 0.5px solid gray;
@@ -40,16 +38,16 @@
             font-size: 28px;
             color: white;
             white-space: nowrap;
-            font-family: 'Garamond', serif; /* Font changed to Garamond */
-            font-weight: bold; /* Bold font style */
+            font-family: 'Brush Script MT', cursive; /* Header in Brush Script MT */
+            font-weight: normal; /* Brush Script is already cursive */
             cursor: pointer;
             text-align: center;
-            flex-grow: 1; /* Makes the h1 take up available space */
+            flex-grow: 1;
         }
 
         .issues-container {
             display: flex;
-            justify-content: flex-end; /* Aligns the issue section to the right */
+            justify-content: flex-end;
             gap: 20px;
             align-items: center;
             margin-right: 30px;
