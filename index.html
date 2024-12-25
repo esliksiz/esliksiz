@@ -46,6 +46,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             color: black;
             white-space: nowrap;
             margin-left: 30px;
+            cursor: pointer;
         }
 
         .issues-container {
@@ -82,10 +83,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
 
         .content {
+            display: none;
             padding: 20px;
             width: 100%;
             text-align: center;
             margin-top: 100px;
+        }
+
+        .active {
+            display: block;
         }
 
         .issue-list {
@@ -107,7 +113,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </head>
 <body>
     <header>
-        <h1>Eşlik-siz Dergi</h1>
+        <h1 onclick="showContent('hakkimizda')">Eşlik-siz Dergi</h1>
         <div class="issues-container">
             <div class="issue" onclick="showContent('sayilar')">
                 <a href="#">Sayılar</a>
@@ -118,8 +124,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </div>
     </header>
 
-    <!-- Main Content visible on entry -->
-    <div class="content">
+    <!-- Hakkımızda content, shown by default when "Eşlik-siz Dergi" is clicked -->
+    <div id="hakkimizda" class="content active">
         <h2>Hakkımızda</h2>
         <p>1</p> <!-- Hakkımızda sayfası için test yazısı -->
     </div>
@@ -151,13 +157,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         function showContent(contentId) {
             const contents = document.querySelectorAll('.content');
             contents.forEach(content => {
-                content.style.display = 'none';
+                content.classList.remove('active');
             });
 
             const activeContent = document.getElementById(contentId);
-            activeContent.style.display = 'block';
+            activeContent.classList.add('active');
         }
     </script>
 </body>
 </html>
-
