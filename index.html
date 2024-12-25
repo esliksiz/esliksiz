@@ -4,13 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eşlik-siz Dergi</title>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-N6DPJT29');</script>
-    <!-- End Google Tag Manager -->
     <link href="https://fonts.googleapis.com/css2?family=Crusoe&display=swap" rel="stylesheet">
     <style>
         body {
@@ -111,5 +104,61 @@
     </style>
 </head>
 <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://w
+    <header>
+        <h1>Eşlik-siz Dergi</h1>
+        <div class="issues-container">
+            <div class="issue" onclick="showContent('hakkimizda')">
+                <a href="#">Hakkımızda</a>
+            </div>
+            <div class="issue" onclick="showContent('sayilar')">
+                <a href="#">Sayılar</a>
+            </div>
+            <div class="issue" onclick="showContent('kunye')">
+                <a href="#">Künye</a>
+            </div>
+        </div>
+    </header>
+
+    <div id="hakkimizda" class="content">
+        <h2>Hakkımızda</h2>
+        <p>1</p> <!-- Hakkımızda sayfası için test yazısı -->
+    </div>
+
+    <div id="sayilar" class="content">
+        <h2>Sayılar</h2>
+        <div class="issue-list">
+            <div class="issue-item">
+                <h3>Sayı 1</h3>
+                <p>Bu, ilk sayının içeriğidir. Burada derginin ilk sayısının özetine veya içeriklerine yer verebilirsiniz.</p>
+            </div>
+            <div class="issue-item">
+                <h3>Sayı 2</h3>
+                <p>İkinci sayının içeriği burada olacak. İkinci sayıda yer alan yazılar veya konular hakkında bilgi ekleyebilirsiniz.</p>
+            </div>
+            <div class="issue-item">
+                <h3>Sayı 3</h3>
+                <p>Üçüncü sayının içerikleri. Üçüncü sayının da içerikleri hakkında bilgi ekleyebilirsiniz.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="kunye" class="content">
+        <h2>Künye</h2>
+        <p>3</p> <!-- Künye sayfası için test yazısı -->
+    </div>
+
+    <script>
+        function showContent(contentId) {
+            const contents = document.querySelectorAll('.content');
+            contents.forEach(content => {
+                content.classList.remove('active');
+            });
+
+            const activeContent = document.getElementById(contentId);
+            if (!activeContent.classList.contains('active')) {
+                activeContent.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
