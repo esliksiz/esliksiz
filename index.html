@@ -130,16 +130,16 @@
 </head>
 <body>
     <header>
-        <h1 onclick="showContent('sayilar')">EŞLİK-SİZ</h1>
+        <h1 onclick="toggleContent()">EŞLİK-SİZ</h1>
     </header>
 
-    <!-- Hakkımızda section visible above the issues -->
+    <!-- Hakkımızda content, displayed by default -->
     <div id="hakkimizda" class="content active">
         <h2 style="font-family: 'Arial', sans-serif;">Hakkımızda</h2>
         <p>1</p> <!-- Hakkımızda sayfası için test yazısı -->
     </div>
 
-    <!-- Issue List under Sayılar -->
+    <!-- Issue List section -->
     <div id="sayilar" class="content">
         <div class="issue-list">
             <div class="issue-item" onclick="toggleContent('sayilar1')">
@@ -167,18 +167,22 @@
     </div>
 
     <script>
-        function showContent(contentId) {
-            const contents = document.querySelectorAll('.content');
-            contents.forEach(content => {
-                content.classList.remove('active');
-            });
-
-            const activeContent = document.getElementById(contentId);
-            activeContent.classList.add('active');
+        function toggleContent() {
+            const hakkimizda = document.getElementById('hakkimizda');
+            const sayilar = document.getElementById('sayilar');
+            
+            // Toggle between Hakkımızda and Sayılar content
+            if (hakkimizda.classList.contains('active')) {
+                hakkimizda.classList.remove('active');
+                sayilar.classList.add('active');
+            } else {
+                hakkimizda.classList.add('active');
+                sayilar.classList.remove('active');
+            }
         }
 
-        function toggleContent(contentId) {
-            const content = document.getElementById(contentId);
+        function toggleContent(issueId) {
+            const content = document.getElementById(issueId);
             content.style.display = content.style.display === 'block' ? 'none' : 'block';
         }
     </script>
