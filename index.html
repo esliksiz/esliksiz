@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eşlik-siz Dergi</title>
-    <!-- Add EB Garamond font from Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@300&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -16,7 +14,7 @@
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
-            overflow-x: hidden;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
             font-size: 16px;
         }
 
@@ -24,10 +22,10 @@
             background-color: white;
             padding: 20px;
             display: flex;
-            justify-content: flex-start; /* Align content to the left */
+            justify-content: flex-start; /* Align to the left */
             align-items: center;
             width: 100%;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Added shadow */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             position: fixed;
             top: 0;
             left: 0;
@@ -37,35 +35,28 @@
 
         header h1 {
             margin: 0;
-            font-size: 18px; /* Smaller font size */
+            font-size: 18px;
             color: black;
-            font-family: 'EB Garamond', serif; /* Use EB Garamond font */
-            font-weight: 300; /* Thinner font */
+            font-family: 'EB Garamond', serif;
+            font-weight: 300;
             text-transform: uppercase;
             cursor: pointer;
-            text-align: center;
-            flex-grow: 0;
-            max-width: 100%;
-            display: block;
-            width: auto;
-            padding-left: 20px; /* Not sticking to the edge */
+            text-align: left; /* Align to the left */
+            padding-left: 0px; /* Align it to the far left */
         }
 
-        /* Content section */
         .content {
+            display: block;
+            padding: 80px 20px 20px; /* Adding padding at the top to avoid overlap with fixed header */
             width: 100%;
             text-align: center;
             margin-top: 100px;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
         }
 
         .issue-list {
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: flex-start;
             width: 100%;
             gap: 10px;
         }
@@ -81,7 +72,6 @@
             cursor: pointer;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             font-size: 14px;
-            text-align: center;
         }
 
         .issue-item:hover {
@@ -99,11 +89,10 @@
         .issue-content {
             display: none;
             padding-top: 10px;
-            background-color: white;
+            background-color: #333;
             border-radius: 5px;
             padding: 15px;
             margin-top: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .issue-content iframe {
@@ -114,14 +103,14 @@
             border: none;
         }
 
-        /* Responsive Design: Adjust font-size for mobile screens */
+        /* Responsive Design */
         @media (max-width: 768px) {
             body {
-                font-size: 14px;
+                font-size: 14px !important;
             }
 
             header h1 {
-                font-size: 16px; /* Smaller font size for mobile */
+                font-size: 16px !important;
             }
 
             .issue-item {
@@ -132,10 +121,9 @@
 </head>
 <body>
     <header>
-        <h1>EŞLİK-SİZ</h1>
+        <h1 onclick="showContent()">EŞLİK-SİZ</h1>
     </header>
 
-    <!-- Issues section, below the header -->
     <div class="content">
         <div class="issue-list">
             <div class="issue-item" onclick="toggleContent('sayilar1')">
@@ -154,7 +142,6 @@
                 <h3>Sayı 3</h3>
                 <div id="sayilar3" class="issue-content">
                     <p>Üçüncü sayının içerikleri. Üçüncü sayının da içerikleri hakkında bilgi ekleyebilirsiniz.</p>
-                    <!-- Embedded content for Sayı 3 -->
                     <iframe width="100%" height="auto" src="https://www.yumpu.com/tr/embed/view/4t2TH7zKkvG3BUQR" frameborder="0" allowfullscreen="true" allowtransparency="true"></iframe><br>
                     <a href="https://www.yumpu.com/tr/document/view/68591968/eslik-siz-dergi-3-say" title="Eşlik-siz Dergi 3. Sayı" target="_blank">Eşlik-siz Dergi 3. Sayı</a>
                 </div>
@@ -163,6 +150,11 @@
     </div>
 
     <script>
+        function showContent() {
+            // Functionality for when clicking the header
+            console.log("Header clicked");
+        }
+
         function toggleContent(contentId) {
             const content = document.getElementById(contentId);
             content.style.display = content.style.display === 'block' ? 'none' : 'block';
@@ -170,3 +162,4 @@
     </script>
 </body>
 </html>
+
