@@ -23,6 +23,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             align-items: center;
             height: 100vh;
             overflow: hidden;
+            font-size: 16px; /* default font size */
         }
 
         header {
@@ -109,6 +110,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             text-align: left;
         }
 
+        /* Responsive Design: Adjust font-size for mobile screens */
+        @media (max-width: 768px) {
+            body {
+                font-size: 14px; /* Adjust for smaller screens */
+            }
+
+            header h1 {
+                font-size: 24px; /* Adjust header font size for mobile */
+            }
+
+            .issue {
+                font-size: 14px; /* Adjust issue font size for mobile */
+            }
+        }
     </style>
 </head>
 <body>
