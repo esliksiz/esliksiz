@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eşlik-siz Dergi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crusoe&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Crusoe', cursive;
+            background-color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        header {
+            background-color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            width: 100%;
+            border-bottom: 0.5px solid gray;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 10;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+            color: black;
+            white-space: nowrap;
+            margin-left: 30px;
+        }
+
+        .issues-container {
+            display: flex;
+            justify-content: flex-start;
+            gap: 20px;
+            align-items: center;
+            margin-left: 30px;
+        }
+
+        .issue {
+            padding: 12px 25px;
+            background-color: transparent;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            color: black;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .issue:hover {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .issue a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .issue:hover a {
+            color: #333;
+        }
+
+        .content {
+            display: none;
+            padding: 20px;
+            width: 100%;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .active {
+            display: block;
+        }
+
+        .issue-list {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .issue-item {
+            padding: 10px;
+            margin-bottom: 15px;
+            background-color: #f1f1f1;
+            border-radius: 5px;
+            width: 80%;
+            text-align: left;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Eşlik-siz Dergi</h1>
+        <div class="issues-container">
+            <div class="issue" onclick="showContent('hakkimizda')">
+                <a href="#">Hakkımızda</a>
+            </div>
+            <div class="issue" onclick="showContent('sayilar')">
+                <a href="#">Sayılar</a>
+            </div>
+            <div class="issue" onclick="showContent('kunye')">
+                <a href="#">Künye</a>
+            </div>
+        </div>
+    </header>
+
+    <div id="hakkimizda" class="content">
+        <h2>Hakkımızda</h2>
+        <p>1</p> <!-- Hakkımızda sayfası için test yazısı -->
+    </div>
+
+    <div id="sayilar" class="content">
+        <h2>Sayılar</h2>
+        <div class="issue-list">
+            <div class="issue-item">
+                <h3>Sayı 1</h3>
+                <p>Bu, ilk sayının içeriğidir. Burada derginin ilk sayısının özetine veya içeriklerine yer verebilirsiniz.</p>
+            </div>
+            <div class="issue-item">
+                <h3>Sayı 2</h3>
+                <p>İkinci sayının içeriği burada olacak. İkinci sayıda yer alan yazılar veya konular hakkında bilgi ekleyebilirsiniz.</p>
+            </div>
+            <div class="issue-item">
+                <h3>Sayı 3</h3>
+                <p>Üçüncü sayının içerikleri. Üçüncü sayının da içerikleri hakkında bilgi ekleyebilirsiniz.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="kunye" class="content">
+        <h2>Künye</h2>
+        <p>3</p> <!-- Künye sayfası için test yazısı -->
+    </div>
+
+    <script>
+        function showContent(contentId) {
+            const contents = document.querySelectorAll('.content');
+            contents.forEach(content => {
+                content.classList.remove('active');
+            });
+
+            const activeContent = document.getElementById(contentId);
+            if (!activeContent.classList.contains('active')) {
+                activeContent.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
