@@ -1,67 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-N6DPJT29');</script>
+    <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eşlik-siz Dergi</title>
     <style>
-        /* Base styles */
         body {
             font-family: Arial, sans-serif;
             background-color: white;
             margin: 0;
             padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
         }
 
         header {
             background-color: white;
-            padding: 10px 20px;
+            padding: 20px;
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
             align-items: center;
             width: 100%;
-            border-bottom: 1px solid gray;
+            border-bottom: 0.5px solid gray;
             position: fixed;
             top: 0;
+            left: 0;
+            right: 0;
             z-index: 10;
         }
 
         header h1 {
             margin: 0;
-            font-size: 1.5rem;
+            font-size: 28px;
             color: black;
-        }
-
-        .menu-icon {
-            display: none;
-            cursor: pointer;
-            width: 24px;
-            height: 24px;
-            flex-shrink: 0;
-        }
-
-        .menu-icon div {
-            width: 100%;
-            height: 3px;
-            background-color: black;
-            margin: 5px 0;
-            border-radius: 2px;
-            transition: all 0.3s ease;
+            white-space: nowrap;
+            margin-left: 30px;
         }
 
         .issues-container {
             display: flex;
-            gap: 10px;
+            justify-content: flex-start;
+            gap: 20px;
+            align-items: center;
+            margin-left: 30px;
         }
 
         .issue {
-            padding: 10px 15px;
-            font-size: 1rem;
+            padding: 12px 25px;
+            background-color: transparent;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            color: black;
+            font-size: 16px;
             font-weight: bold;
             text-decoration: none;
-            color: black;
-            cursor: pointer;
-            transition: all 0.3s ease;
         }
 
         .issue:hover {
@@ -69,109 +71,98 @@
             transform: translateY(-2px);
         }
 
-        main {
-            margin-top: 70px;
-            padding: 20px;
-            width: 100%;
+        .issue a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .issue:hover a {
+            color: #333;
         }
 
         .content {
             display: none;
+            padding: 20px;
+            width: 100%;
+            text-align: center;
+            margin-top: 100px;
         }
 
-        .content.active {
+        .active {
             display: block;
         }
 
-        /* Mobile styles */
-        @media (max-width: 768px) {
-            .issues-container {
-                display: none;
-                flex-direction: column;
-                gap: 15px;
-                position: absolute;
-                top: 60px;
-                right: 20px;
-                background: white;
-                border: 1px solid #ccc;
-                border-radius: 5px;
-                padding: 10px;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-                z-index: 10;
-            }
+        .issue-list {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
 
-            .issues-container.active {
-                display: flex;
-            }
-
-            .menu-icon {
-                display: block;
-            }
+        .issue-item {
+            padding: 10px;
+            margin-bottom: 15px;
+            background-color: #f1f1f1;
+            border-radius: 5px;
+            width: 80%;
+            text-align: left;
         }
     </style>
 </head>
 <body>
     <header>
         <h1>Eşlik-siz Dergi</h1>
-        <div class="menu-icon" onclick="toggleMenu()">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
         <div class="issues-container">
-            <div class="issue" onclick="showContent('hakkimizda')">Hakkımızda</div>
-            <div class="issue" onclick="showContent('sayilar')">Sayılar</div>
-            <div class="issue" onclick="showContent('kunye')">Künye</div>
+            <div class="issue" onclick="showContent('hakkimizda')">
+                <a href="#">Hakkımızda</a>
+            </div>
+            <div class="issue" onclick="showContent('sayilar')">
+                <a href="#">Sayılar</a>
+            </div>
+            <div class="issue" onclick="showContent('kunye')">
+                <a href="#">Künye</a>
+            </div>
         </div>
     </header>
 
-    <main>
-        <div id="hakkimizda" class="content">
-            <h2>Hakkımızda</h2>
-            <p>Bu, Hakkımızda sayfasının içeriğidir.</p>
-        </div>
+    <div id="hakkimizda" class="content">
+        <h2>Hakkımızda</h2>
+        <p>1</p> <!-- Hakkımızda sayfası için test yazısı -->
+    </div>
 
-        <div id="sayilar" class="content">
-            <h2>Sayılar</h2>
-            <div class="issue-list">
-                <div class="issue-item">
-                    <h3>Sayı 1</h3>
-                    <p>İlk sayının içeriği burada yer alıyor.</p>
-                </div>
-                <div class="issue-item">
-                    <h3>Sayı 2</h3>
-                    <p>İkinci sayının içeriği burada yer alıyor.</p>
-                </div>
-                <div class="issue-item">
-                    <h3>Sayı 3</h3>
-                    <p>Üçüncü sayının içeriği burada yer alıyor.</p>
-                </div>
+    <div id="sayilar" class="content">
+        <h2>Sayılar</h2>
+        <div class="issue-list">
+            <div class="issue-item">
+                <h3>Sayı 1</h3>
+                <p>Bu, ilk sayının içeriğidir. Burada derginin ilk sayısının özetine veya içeriklerine yer verebilirsiniz.</p>
+            </div>
+            <div class="issue-item">
+                <h3>Sayı 2</h3>
+                <p>İkinci sayının içeriği burada olacak. İkinci sayıda yer alan yazılar veya konular hakkında bilgi ekleyebilirsiniz.</p>
+            </div>
+            <div class="issue-item">
+                <h3>Sayı 3</h3>
+                <p>Üçüncü sayının içerikleri. Üçüncü sayının da içerikleri hakkında bilgi ekleyebilirsiniz.</p>
             </div>
         </div>
+    </div>
 
-        <div id="kunye" class="content">
-            <h2>Künye</h2>
-            <p>Bu, Künye sayfasının içeriğidir.</p>
-        </div>
-    </main>
+    <div id="kunye" class="content">
+        <h2>Künye</h2>
+        <p>3</p> <!-- Künye sayfası için test yazısı -->
+    </div>
 
     <script>
-        // Toggle visibility of the mobile menu
-        function toggleMenu() {
-            const menu = document.querySelector('.issues-container');
-            menu.classList.toggle('active');
-        }
-
-        // Show the selected content section
         function showContent(contentId) {
             const contents = document.querySelectorAll('.content');
-            contents.forEach(content => content.classList.remove('active'));
-            const activeContent = document.getElementById(contentId);
-            activeContent.classList.add('active');
+            contents.forEach(content => {
+                content.classList.remove('active');
+            });
 
-            // Close the menu after selecting an option (on mobile)
-            const menu = document.querySelector('.issues-container');
-            menu.classList.remove('active');
+            const activeContent = document.getElementById(contentId);
+            if (!activeContent.classList.contains('active')) {
+                activeContent.classList.add('active');
+            }
         }
     </script>
 </body>
