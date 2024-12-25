@@ -38,8 +38,8 @@
             font-size: 28px;
             color: white;
             white-space: nowrap;
-            font-family: 'Brush Script MT', cursive; /* Header in Brush Script MT */
-            font-weight: normal; /* Brush Script is already cursive */
+            font-family: 'Arial', sans-serif; /* Use a sans-serif font */
+            font-weight: bold; /* Make it bold */
             text-transform: uppercase; /* Make it all uppercase */
             cursor: pointer;
             text-align: center;
@@ -167,7 +167,7 @@
 </head>
 <body>
     <header>
-        <h1 onclick="showContent('hakkimizda')">EŞLİK-SİZ: Kendi Bildiğini Okuyan Dergi</h1>
+        <h1 onclick="showContent('hakkimizda')">EŞLİK-SİZ</h1>
         <div class="issues-container">
             <div class="issue" onclick="showContent('sayilar')">
                 <a href="#">Sayılar</a>
@@ -177,7 +177,7 @@
 
     <!-- Hakkımızda content, shown by default when "Eşlik-siz" is clicked -->
     <div id="hakkimizda" class="content active">
-        <h2 style="font-family: 'Brush Script MT', cursive;">Hakkımızda</h2>
+        <h2 style="font-family: 'Arial', sans-serif;">Hakkımızda</h2>
         <p>1</p> <!-- Hakkımızda sayfası için test yazısı -->
     </div>
 
