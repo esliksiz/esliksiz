@@ -1,17 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-N6DPJT29');</script>
-    <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eşlik-siz Dergi</title>
     <style>
+        /* Base styles */
         body {
             font-family: Arial, sans-serif;
             background-color: white;
@@ -20,18 +14,16 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            height: 100vh;
-            overflow: hidden;
         }
 
         header {
             background-color: white;
-            padding: 20px;
+            padding: 15px;
             display: flex;
-            justify-content: flex-start;
+            justify-content: space-between;
             align-items: center;
             width: 100%;
-            border-bottom: 0.5px solid gray;
+            border-bottom: 1px solid gray;
             position: fixed;
             top: 0;
             left: 0;
@@ -41,29 +33,25 @@
 
         header h1 {
             margin: 0;
-            font-size: 28px;
+            font-size: 24px;
             color: black;
-            white-space: nowrap;
-            margin-left: 30px;
         }
 
         .issues-container {
             display: flex;
-            justify-content: flex-start;
-            gap: 20px;
-            align-items: center;
-            margin-left: 30px;
+            justify-content: center;
+            gap: 10px;
         }
 
         .issue {
-            padding: 12px 25px;
+            padding: 10px 15px;
             background-color: transparent;
             border-radius: 5px;
-            transition: all 0.3s ease;
-            color: black;
-            font-size: 16px;
+            font-size: 14px;
             font-weight: bold;
             text-decoration: none;
+            color: black;
+            transition: all 0.3s ease;
         }
 
         .issue:hover {
@@ -71,21 +59,12 @@
             transform: translateY(-2px);
         }
 
-        .issue a {
-            text-decoration: none;
-            color: black;
-        }
-
-        .issue:hover a {
-            color: #333;
-        }
-
         .content {
             display: none;
             padding: 20px;
             width: 100%;
             text-align: center;
-            margin-top: 100px;
+            margin-top: 70px;
         }
 
         .active {
@@ -103,8 +82,56 @@
             margin-bottom: 15px;
             background-color: #f1f1f1;
             border-radius: 5px;
-            width: 80%;
+            width: 90%;
             text-align: left;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            header h1 {
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+
+            .issues-container {
+                flex-wrap: wrap;
+                gap: 5px;
+                justify-content: flex-start;
+            }
+
+            .issue {
+                padding: 8px 12px;
+                font-size: 12px;
+            }
+
+            .content {
+                padding: 10px;
+                margin-top: 90px;
+            }
+
+            .issue-item {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 18px;
+            }
+
+            .issue {
+                padding: 6px 10px;
+                font-size: 10px;
+            }
+
+            .content {
+                margin-top: 100px;
+            }
         }
     </style>
 </head>
@@ -126,7 +153,7 @@
 
     <div id="hakkimizda" class="content">
         <h2>Hakkımızda</h2>
-        <p>1</p> <!-- Hakkımızda sayfası için test yazısı -->
+        <p>1</p>
     </div>
 
     <div id="sayilar" class="content">
@@ -134,22 +161,22 @@
         <div class="issue-list">
             <div class="issue-item">
                 <h3>Sayı 1</h3>
-                <p>Bu, ilk sayının içeriğidir. Burada derginin ilk sayısının özetine veya içeriklerine yer verebilirsiniz.</p>
+                <p>Bu, ilk sayının içeriğidir.</p>
             </div>
             <div class="issue-item">
                 <h3>Sayı 2</h3>
-                <p>İkinci sayının içeriği burada olacak. İkinci sayıda yer alan yazılar veya konular hakkında bilgi ekleyebilirsiniz.</p>
+                <p>İkinci sayının içeriği burada olacak.</p>
             </div>
             <div class="issue-item">
                 <h3>Sayı 3</h3>
-                <p>Üçüncü sayının içerikleri. Üçüncü sayının da içerikleri hakkında bilgi ekleyebilirsiniz.</p>
+                <p>Üçüncü sayının içerikleri.</p>
             </div>
         </div>
     </div>
 
     <div id="kunye" class="content">
         <h2>Künye</h2>
-        <p>3</p> <!-- Künye sayfası için test yazısı -->
+        <p>3</p>
     </div>
 
     <script>
@@ -167,3 +194,4 @@
     </script>
 </body>
 </html>
+
