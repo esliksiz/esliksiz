@@ -14,10 +14,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <link href="https://fonts.googleapis.com/css2?family=Crusoe&display=swap" rel="stylesheet">
     <style>
         body {
-            <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N6DPJT29"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
             font-family: 'Crusoe', cursive;
             background-color: white;
             margin: 0;
@@ -86,15 +82,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         }
 
         .content {
-            display: none;
             padding: 20px;
             width: 100%;
             text-align: center;
             margin-top: 100px;
-        }
-
-        .active {
-            display: block;
         }
 
         .issue-list {
@@ -118,9 +109,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <header>
         <h1>Eşlik-siz Dergi</h1>
         <div class="issues-container">
-            <div class="issue" onclick="showContent('hakkimizda')">
-                <a href="#">Hakkımızda</a>
-            </div>
             <div class="issue" onclick="showContent('sayilar')">
                 <a href="#">Sayılar</a>
             </div>
@@ -130,7 +118,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </header>
 
-    <div id="hakkimizda" class="content">
+    <!-- Main Content visible on entry -->
+    <div class="content">
         <h2>Hakkımızda</h2>
         <p>1</p> <!-- Hakkımızda sayfası için test yazısı -->
     </div>
@@ -162,14 +151,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         function showContent(contentId) {
             const contents = document.querySelectorAll('.content');
             contents.forEach(content => {
-                content.classList.remove('active');
+                content.style.display = 'none';
             });
 
             const activeContent = document.getElementById(contentId);
-            if (!activeContent.classList.contains('active')) {
-                activeContent.classList.add('active');
-            }
+            activeContent.style.display = 'block';
         }
     </script>
 </body>
 </html>
+
