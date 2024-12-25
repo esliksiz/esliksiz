@@ -169,19 +169,18 @@
     <header>
         <h1 onclick="showContent('hakkimizda')">EŞLİK-SİZ</h1>
         <div class="issues-container">
-            <div class="issue" onclick="showContent('sayilar')">
-                <a href="#">Sayılar</a>
+            <div class="issue" onclick="showContent('hakkimizda')">
+                <a href="#">Hakkımızda</a>
             </div>
         </div>
     </header>
 
-    <!-- Hakkımızda content, shown by default when "Eşlik-siz" is clicked -->
+    <!-- Hakkımızda content, now with issues under it -->
     <div id="hakkimizda" class="content active">
         <h2 style="font-family: 'Arial', sans-serif;">Hakkımızda</h2>
         <p>1</p> <!-- Hakkımızda sayfası için test yazısı -->
-    </div>
 
-    <div id="sayilar" class="content">
+        <!-- Issue List under Hakkımızda -->
         <div class="issue-list">
             <div class="issue-item" onclick="toggleContent('sayilar1')">
                 <h3>Sayı 1</h3>
