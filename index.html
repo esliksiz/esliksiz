@@ -32,16 +32,30 @@
             color: black;
         }
 
+        .menu-icon {
+            display: none;
+            cursor: pointer;
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+        }
+
+        .menu-icon div {
+            width: 100%;
+            height: 3px;
+            background-color: black;
+            margin: 5px 0;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
         .issues-container {
             display: flex;
-            flex-wrap: wrap;
             gap: 10px;
         }
 
         .issue {
             padding: 10px 15px;
-            background-color: transparent;
-            border-radius: 5px;
             font-size: 1rem;
             font-weight: bold;
             text-decoration: none;
@@ -69,55 +83,29 @@
             display: block;
         }
 
-        .issue-list {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 10px;
-        }
-
-        .issue-item {
-            padding: 10px;
-            margin-bottom: 15px;
-            background-color: #f1f1f1;
-            border-radius: 5px;
-            width: 100%;
-        }
-
-        /* Responsive styles */
+        /* Mobile styles */
         @media (max-width: 768px) {
-            /* Display all sections on mobile */
-            .content {
-                display: block !important;
-            }
-
-            header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            header h1 {
-                font-size: 1.2rem;
-            }
-
             .issues-container {
-                justify-content: flex-start;
+                display: none;
+                flex-direction: column;
+                gap: 15px;
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                background: white;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                padding: 10px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+                z-index: 10;
             }
 
-            .issue {
-                padding: 8px 12px;
-                font-size: 0.9rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            header h1 {
-                font-size: 1rem;
+            .issues-container.active {
+                display: flex;
             }
 
-            .issue {
-                padding: 6px 10px;
-                font-size: 0.8rem;
+            .menu-icon {
+                display: block;
             }
         }
     </style>
@@ -125,6 +113,11 @@
 <body>
     <header>
         <h1>Eşlik-siz Dergi</h1>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
         <div class="issues-container">
             <div class="issue" onclick="showContent('hakkimizda')">Hakkımızda</div>
             <div class="issue" onclick="showContent('sayilar')">Sayılar</div>
@@ -163,11 +156,22 @@
     </main>
 
     <script>
+        // Toggle visibility of the mobile menu
+        function toggleMenu() {
+            const menu = document.querySelector('.issues-container');
+            menu.classList.toggle('active');
+        }
+
+        // Show the selected content section
         function showContent(contentId) {
             const contents = document.querySelectorAll('.content');
             contents.forEach(content => content.classList.remove('active'));
             const activeContent = document.getElementById(contentId);
             activeContent.classList.add('active');
+
+            // Close the menu after selecting an option (on mobile)
+            const menu = document.querySelector('.issues-container');
+            menu.classList.remove('active');
         }
     </script>
 </body>
