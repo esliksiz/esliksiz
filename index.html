@@ -19,10 +19,10 @@
         }
 
         header {
-            background-color: black; /* Changed the header to black */
+            background-color: black;
             padding: 20px;
             display: flex;
-            justify-content: flex-start;
+            justify-content: space-between; /* Align items to the ends */
             align-items: center;
             width: 100%;
             border-bottom: 0.5px solid gray;
@@ -36,18 +36,21 @@
         header h1 {
             margin: 0;
             font-size: 28px;
-            color: white; /* Changed text color to white */
+            color: white;
             white-space: nowrap;
-            margin-left: 30px;
+            font-family: 'Garamond', serif; /* Font changed to Garamond */
+            font-weight: bold; /* Bold font style */
             cursor: pointer;
+            text-align: center;
+            flex-grow: 1; /* Makes the h1 take up available space */
         }
 
         .issues-container {
             display: flex;
-            justify-content: flex-start;
+            justify-content: flex-end; /* Aligns the issue section to the right */
             gap: 20px;
             align-items: center;
-            margin-left: 30px;
+            margin-right: 30px;
         }
 
         .issue {
@@ -55,7 +58,7 @@
             background-color: transparent;
             border-radius: 5px;
             transition: all 0.3s ease;
-            color: white; /* White text for issues */
+            color: white;
             font-size: 16px;
             font-weight: bold;
             text-decoration: none;
@@ -72,7 +75,7 @@
         }
 
         .issue:hover a {
-            color: #ddd; /* Lighter color on hover */
+            color: #ddd;
         }
 
         .content {
@@ -96,16 +99,16 @@
         }
 
         .issue-item {
-            padding: 12px 20px; /* Reduced padding */
+            padding: 12px 20px;
             margin-bottom: 10px;
-            width: 80%;  /* Reduced width */
-            background-color: white; /* White background for issue boxes */
-            color: black; /* Black text color */
+            width: 80%;
+            background-color: white;
+            color: black;
             border-radius: 20px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             cursor: pointer;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            font-size: 14px;  /* Adjusted font size */
+            font-size: 14px;
         }
 
         .issue-item:hover {
@@ -115,7 +118,7 @@
 
         .issue-item h3 {
             margin: 0;
-            font-size: 16px;  /* Slightly reduced font size */
+            font-size: 16px;
             font-weight: bold;
             text-transform: uppercase;
         }
@@ -147,6 +150,10 @@
                 font-size: 24px !important;
             }
 
+            .issues-container {
+                margin-right: 10px;
+            }
+
             .issue {
                 font-size: 14px !important;
             }
@@ -159,7 +166,7 @@
 </head>
 <body>
     <header>
-        <h1 onclick="showContent('hakkimizda')">Eşlik-siz</h1> <!-- Changed text to "Eşlik-siz" -->
+        <h1 onclick="showContent('hakkimizda')">Eşlik-siz</h1>
         <div class="issues-container">
             <div class="issue" onclick="showContent('sayilar')">
                 <a href="#">Sayılar</a>
