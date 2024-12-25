@@ -14,10 +14,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <link href="https://fonts.googleapis.com/css2?family=Crusoe&display=swap" rel="stylesheet">
     <style>
         body {
-            <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N6DPJT29"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
             font-family: 'Crusoe', cursive;
             background-color: white;
             margin: 0;
@@ -33,7 +29,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             background-color: white;
             padding: 20px;
             display: flex;
-            justify-content: flex-start;
+            justify-content: space-between;
             align-items: center;
             width: 100%;
             border-bottom: 0.5px solid gray;
@@ -49,40 +45,61 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             font-size: 28px;
             color: black;
             white-space: nowrap;
-            margin-left: 30px;
         }
 
-        .issues-container {
-            display: flex;
-            justify-content: flex-start;
-            gap: 20px;
-            align-items: center;
-            margin-left: 30px;
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 25px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 11;
         }
 
-        .issue {
-            padding: 12px 25px;
-            background-color: transparent;
+        .hamburger div {
+            width: 30px;
+            height: 3px;
+            background-color: black;
             border-radius: 5px;
             transition: all 0.3s ease;
+        }
+
+        .menu {
+            display: none;
+            flex-direction: column;
+            position: fixed;
+            top: 70px;
+            right: 0;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            gap: 15px;
+            border-radius: 0 0 0 10px;
+        }
+
+        .menu.active {
+            display: flex;
+        }
+
+        .menu a {
+            text-decoration: none;
             color: black;
             font-size: 16px;
             font-weight: bold;
-            text-decoration: none;
         }
 
-        .issue:hover {
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            transform: translateY(-2px);
-        }
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
 
-        .issue a {
-            text-decoration: none;
-            color: black;
-        }
-
-        .issue:hover a {
-            color: #333;
+            .issues-container {
+                display: none;
+            }
         }
 
         .content {
@@ -96,27 +113,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         .active {
             display: block;
         }
-
-        .issue-list {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-
-        .issue-item {
-            padding: 10px;
-            margin-bottom: 15px;
-            background-color: #f1f1f1;
-            border-radius: 5px;
-            width: 80%;
-            text-align: left;
-        }
-
     </style>
 </head>
 <body>
     <header>
         <h1>Eşlik-siz Dergi</h1>
+        <button class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </button>
+        <div class="menu" id="menu">
+            <a href="#" onclick="showContent('hakkimizda')">Hakkımızda</a>
+            <a href="#" onclick="showContent('sayilar')">Sayılar</a>
+            <a href="#" onclick="showContent('kunye')">Künye</a>
+        </div>
         <div class="issues-container">
             <div class="issue" onclick="showContent('hakkimizda')">
                 <a href="#">Hakkımızda</a>
@@ -169,6 +180,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             if (!activeContent.classList.contains('active')) {
                 activeContent.classList.add('active');
             }
+        }
+
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('active');
         }
     </script>
 </body>
