@@ -5,10 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eşlik-siz Dergi</title>
     <link rel="icon" href="https://raw.githubusercontent.com/esliksiz/esliksiz/refs/heads/main/logomuzke.png" type="image/png">
+    
+    <!-- Font Embed Code -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap" rel="stylesheet">
+
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: white;
+            font-family: 'Arial', sans-serif; /* Default font for the body */
+            background-image: url('https://raw.githubusercontent.com/esliksiz/esliksiz/refs/heads/main/arkaplansonn.jpg');
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
             margin: 0;
             padding: 0;
             display: flex;
@@ -20,23 +29,33 @@
         }
 
         header {
-            background-color: white;
             padding: 10px;
             display: flex;
-            justify-content: flex-start;
+            justify-content: center;
             align-items: center;
             width: 100%;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             z-index: 10;
-            height: 50px;
+            height: 150px;
         }
 
         header img {
-            height: 50px; /* Increased logo size */
+            height: 120px; /* Adjusted logo size */
+        }
+
+        .intro-text {
+            text-align: left;
+            font-family: 'Afacad Flux', sans-serif; /* Changed to the new font */
+            font-size: 90px; /* Increased font size */
+            font-weight: 100; /* Made the font thinner */
+            color: white;
+            margin-top: 150px; /* Adjust spacing to avoid overlap */
+            margin-left: -250px; /* Moved text further left */
+            padding: 10px;
+            line-height: 1.05; /* Reduced line-height to make the spacing tighter */
         }
 
         .content {
@@ -44,7 +63,7 @@
             padding: 80px 20px 20px;
             width: 100%;
             text-align: center;
-            margin-top: 100px;
+            margin-top: 50px;
         }
 
         .issue-list {
@@ -59,7 +78,7 @@
         .issue-item {
             padding: 12px 20px;
             margin-bottom: 10px;
-            width: 28%; /* Set a reasonable width for side-by-side layout */
+            width: 28%;
             background-color: white;
             color: black;
             border-radius: 20px;
@@ -108,21 +127,32 @@
             }
 
             .issue-item {
-                width: 45%; /* Adjust width for smaller screens */
+                width: 45%;
             }
         }
 
         @media (max-width: 480px) {
             .issue-item {
-                width: 90%; /* Further adjustment for mobile */
+                width: 90%;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <img src="https://raw.githubusercontent.com/esliksiz/esliksiz/refs/heads/main/logomuzke.png" alt="Eşlik-siz Logo">
+        <img src="https://raw.githubusercontent.com/esliksiz/esliksiz/refs/heads/main/logobeyaz.png" alt="Eşlik-siz Logo">
     </header>
+
+    <div class="intro-text">
+        her sayıda yeni <br>
+        tasarım yapan, <br>
+        üç kere isim <br>
+        değiştiren, <br>
+        günde üç bardak <br>
+        kahve içen, <br>
+        kendi bildiğini <br>
+        okuyan dergi.
+    </div>
 
     <div class="content">
         <div class="issue-list">
@@ -130,7 +160,7 @@
                 <h3>Sayı 1</h3>
                 <div id="sayilar1" class="issue-content">
                     <p>Bu, ilk sayının içeriğidir. Burada derginin ilk sayısının özetine veya içeriklerine yer verebilirsiniz.</p>
-                    <iframe width="620px" height="600px" src="https://www.yumpu.com/tr/embed/view/uqP8I7wWlXhMZsov" frameborder="0" allowfullscreen="true"  allowtransparency="true"></iframe><br>
+                    <iframe width="620px" height="600px" src="https://www.yumpu.com/tr/embed/view/uqP8I7wWlXhMZsov" frameborder="0" allowfullscreen="true" allowtransparency="true"></iframe><br>
                     <a href="https://www.yumpu.com/tr/document/view/68283979/lokrian-dergi-1-say-agustos-eylul-2022" title="Lokrian Dergi 1. Sayı (Ağustos-Eylül 2022)" target="_blank">Lokrian Dergi 1. Sayı (Ağustos-Eylül 2022)</a>
                 </div>
             </div>
@@ -138,7 +168,7 @@
                 <h3>Sayı 2</h3>
                 <div id="sayilar2" class="issue-content">
                     <p>İkinci sayının içeriği burada olacak. İkinci sayıda yer alan yazılar veya konular hakkında bilgi ekleyebilirsiniz.</p>
-                    <iframe width="620px" height="600px" src="https://www.yumpu.com/tr/embed/view/CsxpDdwrZHh27FVO" frameborder="0" allowfullscreen="true"  allowtransparency="true"></iframe><br>
+                    <iframe width="620px" height="600px" src="https://www.yumpu.com/tr/embed/view/CsxpDdwrZHh27FVO" frameborder="0" allowfullscreen="true" allowtransparency="true"></iframe><br>
                     <a href="https://www.yumpu.com/tr/document/view/68284004/lokrian-dergi-ekim-kasm-says" title="Lokrian Dergi, Ekim-Kasım Sayısı" target="_blank">Lokrian Dergi, Ekim-Kasım Sayısı</a>
                 </div>
             </div>
@@ -146,7 +176,7 @@
                 <h3>Sayı 3</h3>
                 <div id="sayilar3" class="issue-content">
                     <p>Üçüncü sayının içerikleri. Üçüncü sayının da içerikleri hakkında bilgi ekleyebilirsiniz.</p>
-                    <iframe width="620px" height="600px" src="https://www.yumpu.com/tr/embed/view/7xJ1XuYWpKHkzAMP" frameborder="0" allowfullscreen="true"  allowtransparency="true"></iframe><br>
+                    <iframe width="620px" height="600px" src="https://www.yumpu.com/tr/embed/view/7xJ1XuYWpKHkzAMP" frameborder="0" allowfullscreen="true" allowtransparency="true"></iframe><br>
                     <a href="https://www.yumpu.com/tr/document/view/68591968/eslik-siz-dergi-3-say" title="Eşlik-siz Dergi 3. Sayı" target="_blank">Eşlik-siz Dergi 3. Sayı</a>
                 </div>
             </div>
@@ -156,7 +186,6 @@
     <script>
         function toggleContent(contentId) {
             const content = document.getElementById(contentId);
-            // Toggle visibility of the content but do not hide others
             content.style.display = content.style.display === 'block' ? 'none' : 'block';
         }
     </script>
