@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eşlik-siz Dergi</title>
+    <link rel="icon" href="https://raw.githubusercontent.com/esliksiz/esliksiz/refs/heads/main/logomuzke.png" type="image/png">
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -20,7 +21,7 @@
 
         header {
             background-color: white;
-            padding: 20px;
+            padding: 10px; /* Reduced padding */
             display: flex;
             justify-content: flex-start;
             align-items: center;
@@ -31,11 +32,11 @@
             left: 0;
             right: 0;
             z-index: 10;
+            height: 50px; /* Set a fixed height */
         }
 
-        .banner-image {
-            height: 50px; /* Adjust the height as necessary */
-            margin-right: 10px; /* Space between image and text */
+        header img {
+            height: 40px; /* Increased logo size */
         }
 
         .content {
@@ -102,10 +103,6 @@
                 font-size: 14px !important;
             }
 
-            header h1 {
-                font-size: 16px !important;
-            }
-
             .issue-item {
                 width: 80%;
             }
@@ -114,7 +111,7 @@
 </head>
 <body>
     <header>
-        <img src="https://raw.githubusercontent.com/esliksiz/esliksiz/refs/heads/main/logomuzke.png" alt="Banner" class="banner-image">
+        <img src="https://raw.githubusercontent.com/esliksiz/esliksiz/refs/heads/main/logomuzke.png" alt="Eşlik-siz Logo">
     </header>
 
     <div class="content">
