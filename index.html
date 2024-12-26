@@ -46,16 +46,29 @@
             height: 120px; /* Default logo size */
         }
 
-        @media (min-width: 769px) {
+        /* Changes for Mobile */
+        @media (max-width: 768px) {
+            header {
+                justify-content: flex-start; /* Align the logo to the left */
+            }
+
             header img {
-                height: 100px; /* Smaller logo size for desktop */
+                height: 80px; /* Smaller logo size for mobile */
+                margin-left: 10px; /* Add some left margin */
+            }
+
+            .intro-text {
+                font-size: 40px; /* Make the intro text smaller for mobile */
+                margin-left: 10px; /* Adjust left margin for better positioning */
+                margin-top: 160px; /* Adjust for smaller screen */
+                line-height: 1.2; /* Tighter line-height for smaller screens */
             }
         }
 
         .intro-text {
             text-align: left;
             font-family: 'Afacad Flux', sans-serif; /* Changed to the new font */
-            font-size: 90px; /* Increased font size */
+            font-size: 90px; /* Default size */
             font-weight: 100; /* Made the font thinner */
             color: white;
             margin-top: 150px; /* Adjust spacing to avoid overlap */
