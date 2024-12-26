@@ -46,6 +46,12 @@
             height: 120px; /* Default logo size */
         }
 
+        @media (min-width: 769px) {
+            header img {
+                height: 100px; /* Smaller logo size for desktop */
+            }
+        }
+
         .intro-text {
             text-align: left;
             font-family: 'Afacad Flux', sans-serif; /* Changed to the new font */
@@ -129,36 +135,11 @@
             .issue-item {
                 width: 45%;
             }
-
-            .intro-text {
-                font-size: 60px; /* Smaller font size for mobile */
-                margin-left: -100px; /* Adjusted left margin for smaller screens */
-            }
-
-            header img {
-                height: 80px; /* Smaller logo size for mobile */
-                position: absolute;
-                left: 20px; /* Moved logo to the left */
-                top: 20px;
-            }
         }
 
         @media (max-width: 480px) {
             .issue-item {
                 width: 90%;
-            }
-
-            .intro-text {
-                font-size: 50px; /* Further smaller font size for very small screens */
-                margin-left: 0; /* Adjusted left margin for very small screens */
-                margin-right: 10px; /* Slight right margin for better visibility */
-            }
-
-            header img {
-                height: 60px; /* Even smaller logo size for very small screens */
-                position: absolute;
-                left: 10px; /* Further adjusted left position for smaller screens */
-                top: 10px;
             }
         }
     </style>
