@@ -13,7 +13,7 @@
 
     <style>
         body {
-            font-family: 'Arial', sans-serif; /* Default font for the body */
+            font-family: 'Arial', sans-serif;
             background-image: url('https://raw.githubusercontent.com/esliksiz/esliksiz/refs/heads/main/arkaplansonn.jpg');
             background-size: cover;
             background-position: center center;
@@ -43,19 +43,19 @@
         }
 
         header img {
-            height: 120px; /* Default logo size */
+            height: 120px;
         }
 
         .intro-text {
             text-align: left;
-            font-family: 'Afacad Flux', sans-serif; /* Changed to the new font */
-            font-size: 90px; /* Increased font size */
-            font-weight: 100; /* Made the font thinner */
+            font-family: 'Afacad Flux', sans-serif;
+            font-size: 90px;
+            font-weight: 100;
             color: white;
-            margin-top: 150px; /* Adjust spacing to avoid overlap */
-            margin-left: -250px; /* Moved text further left */
+            margin-top: 150px;
+            margin-left: -250px;
             padding: 10px;
-            line-height: 1.05; /* Reduced line-height to make the spacing tighter */
+            line-height: 1.05;
         }
 
         .content {
@@ -120,6 +120,26 @@
             border: none;
         }
 
+        /* Hakkımızda Button */
+        .hakkimizda-btn {
+            position: absolute;
+            right: 30px; /* Adjusted to move the button slightly left */
+            top: 70px;
+            background: none;
+            border: none;
+            font-family: 'Afacad Flux', sans-serif;
+            font-size: 18px;
+            font-weight: 100;
+            color: white;
+            cursor: pointer;
+            text-transform: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .hakkimizda-btn:hover {
+            opacity: 0.8;
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             body {
@@ -131,15 +151,21 @@
             }
 
             .intro-text {
-                font-size: 60px; /* Smaller font size for mobile */
-                margin-left: -100px; /* Adjusted left margin for smaller screens */
+                font-size: 60px;
+                margin-left: -100px;
             }
 
             header img {
-                height: 80px; /* Smaller logo size for mobile */
+                height: 80px;
                 position: absolute;
-                left: 20px; /* Moved logo to the left */
+                left: 20px;
                 top: 20px;
+            }
+
+            .hakkimizda-btn {
+                top: 60px;
+                font-size: 16px;
+                right: 25px;
             }
         }
 
@@ -149,16 +175,22 @@
             }
 
             .intro-text {
-                font-size: 50px; /* Further smaller font size for very small screens */
-                margin-left: 0; /* Adjusted left margin for very small screens */
-                margin-right: 10px; /* Slight right margin for better visibility */
+                font-size: 50px;
+                margin-left: 0;
+                margin-right: 10px;
             }
 
             header img {
-                height: 60px; /* Even smaller logo size for very small screens */
+                height: 60px;
                 position: absolute;
-                left: 10px; /* Further adjusted left position for smaller screens */
+                left: 10px;
                 top: 10px;
+            }
+
+            .hakkimizda-btn {
+                font-size: 14px;
+                top: 50px;
+                right: 20px;
             }
         }
     </style>
@@ -166,6 +198,7 @@
 <body>
     <header>
         <img src="https://raw.githubusercontent.com/esliksiz/esliksiz/refs/heads/main/logobeyaz.png" alt="Eşlik-siz Logo">
+        <button class="hakkimizda-btn" onclick="window.location.href='#'">hakkımızda</button>
     </header>
 
     <div class="intro-text">
